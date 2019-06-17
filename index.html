@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PHP Short Article</title>
+	<style type="text/css">
+		body {
+    	margin: 0;
+   		padding: 0;
+		}
+		h1 {
+			text-align: center;
+		}
+		a {
+			color: black;
+		}
+		.green-text {
+			color: green;
+		}
+		.red-text {
+			color: red;	
+		}
+		.brown-text {
+			color: brown;
+		}
+		.blue-text {
+			color: blue;
+		}
+		.button {
+			display: inline-block;
+			margin-top: .5em;
+			padding: .3em;
+			background-color: green;
+			color: white;
+			text-decoration: none;
+			box-shadow: -.2em -.2em .5em .2em rgb(220, 220, 220);
+		}
+		.nav-container {
+			display: block;
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-top-width: 2px;
+			border-bottom-width: 2px;
+			border-top-color: : grey;
+			border-bottom-color: : grey;
+			overflow: auto; 
+			white-space: nowrap;
+			background-color: white;
+			height: 15em;
+			width: 100%;
+		}
+		.nav-container div {
+			list-style: none;
+			text-align: left;
+		}
+		.nav-container div div {
+			display: block;
+			position: relative;
+			height: 2.5em;
+		}
+		.nav-container div div a {
+			display: block;
+			position: absolute;
+			padding: .8em 1em .5em 1.3em;
+			text-decoration: none;
+		}
+		.nav-container div div a:hover {
+			color: grey;
+		}
+		.top-border {
+		border-top-style: solid;
+		border-top-width: 1px;
+		border-top-color: grey;
+		}
+		main {
+			padding: 0 1.3em 0 1.3em;
+		}
+		@media screen and (min-width: 900px) {
+			body {
+				display: grid;
+				grid-template-columns: 33% 67%;
+			}
+			#navbar {
+				grid-column: 1 / 2;
+				position: fixed;
+				border-right-style: solid;
+				border-right-width: 2px;
+				width: 33%;
+				height: 100%
+			}
+			main {
+				grid-column: 2 / 3;				
+			}
+			.nav-container {
+				overflow: visible; 
+				white-space: none;
+				border-bottom-style: none;
+			}
+		}
+		.main-section {
+			border-top-style: solid;
+			border-top-color: rgb(230, 230, 230);
+			border-top-width: 1px;
+		}
+		.remark {
+			background-color: rgb(204, 255, 255);
+			border-left-style: solid;
+			border-left-color: rgb(102, 255, 255);
+			border-left-width: .4em;
+			padding: .5em;
+		}
+		.side-remark {
+			background-color: rgb(255, 255, 102, .5);
+			border-left-style: solid;
+			border-left-color: rgb(255, 255, 0);
+			border-left-width: .4em;
+			padding: .5em;
+		}
+		.example-box {
+			border-style: solid;
+			border-color: rgb(210, 210, 210);
+			border-width: 1px;
+			box-shadow: -.2em -.2em .5em .2em rgb(220, 220, 220);
+			background-color: rgb(240, 240, 240);
+			padding: .5em;
+		}
+		.example-box div {
+			border-left-style: solid;
+			border-left-color: green;
+			border-left-width: .4em;
+		}
+		.example-box p {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+		.code-box {
+			border-style: solid;
+			border-color: rgb(210, 210, 210);
+			border-width: 1px;
+			background-color: white;
+			padding: .5em;
+		}
+	</style>
+</head>
+<body>
+<nav id="navbar">
+<header><h1>PHP Short Article</h1></header>
+<div class="nav-container">
+	<div>
+		<div><a class="nav-link" href="#What_You_Should_Already_Know">What You Should Already Know</a></div>
+		<div class="top-border"><a class="nav-link" href="#What_is_PHP?">What is PHP?</a></div>
+		<div class="top-border"><a class="nav-link" href="#What_is_a_PHP_File?">What is a PHP File?</a></div>
+		<div class="top-border"><a class="nav-link" href="#What_Can_PHP_Do?">What Can PHP Do?</a></div>
+		<div class="top-border"><a class="nav-link" href="#Why_PHP?">Why PHP?</a></div>
+		<div class="top-border"><a class="nav-link" href="#What_Do_I_Need?">What Do I Need?</a></div>
+		<div class="top-border"><a class="nav-link" href="#Use_a_Web_Host_With_PHP_Support">Use a Web Host With PHP Support</a></div>
+		<div class="top-border"><a class="nav-link" href="#Set_Up_PHP_on_Your_Own_PC">Set Up PHP on Your Own PC</a></div>
+		<div class="top-border"><a class="nav-link" href="#Basic_PHP_Syntax">Basic PHP Syntax</a></div>
+		<div class="top-border"><a class="nav-link" href="#Comments_in_PHP">Comments in PHP</a></div>
+		<div class="top-border"><a class="nav-link" href="#PHP_Case_Sensitivity">PHP Case Sensitivity</a></div>
+		<div class="top-border"><a class="nav-link" href="#Extra_Examples">Extra Examples</a></div>
+	</div>
+</div>
+</nav>
+<main id="main-doc">
+	<section class="main-section" id="What_You_Should_Already_Know">
+	<header><h2>What You Should Already Know</h2></header>
+	<p>
+		Before you continue you should have a basic understanding of the following:
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ul>
+		If you want to study these subjects first, find the tutorials on this <a class="_blank" href="https://www.w3schools.com/default.asp">Website</a>.
+	</p>
+	</section>
+	<section class="main-section" id="What_is_PHP?">
+	<header><h2>What is PHP?</h2></header>
+	<p class="remark">PHP scripts are executed on the server.</p>
+	<ul>
+		<li>PHP is an acronym for "PHP: Hypertext Preprocessor"</li>
+		<li>PHP is a widely-used, open source scripting language</li>
+		<li>PHP scripts are executed on the server</li>
+		<li>PHP is free to download and use</li>
+	</ul>
+	<div class="side-remark">
+	<p>
+		<b>PHP is an amazing and popular language!</b> <br> <br>
+		It is powerful enough to be at the core of the biggest blogging system on the web (WordPress)! <br>
+		It is deep enough to run the largest social network (Facebook)! <br>
+		It is also easy enough to be a beginner's first server side language! 
+	</p>
+	</div>
+	</section>
+	<section class="main-section" id="What_is_a_PHP_File?">
+	<header><h2>What is a PHP File?</h2></header>	
+	<ul>
+		<li>
+			PHP files can contain text, HTML, CSS, JavaScript, and PHP code
+		</li>
+		<li>
+			PHP code are executed on the server, and the result is returned to the browser as plain HTML			
+		</li>
+		<li>
+			PHP files have extension ".php"
+		</li>
+	</ul>
+	</section>
+	<section class="main-section" id="What_Can_PHP_Do?">
+	<header><h2>What Can PHP Do?</h2></header>	
+	<ul>
+		<li>PHP can generate dynamic page content</li>
+		<li>PHP can create, open, read, write, delete, and close files on the server</li>
+		<li>PHP can collect form data</li>
+		<li>PHP can send and receive cookies</li>
+		<li>PHP can add, delete, modify data in your database</li>
+		<li>PHP can be used to control user-access</li>
+		<li>PHP can encrypt data</li>
+	</ul>
+	<p>
+		With PHP you are not limited to output HTML. You can output images, PDF files, and even Flash movies. You can also output any text, such as XHTML and XML.
+	</p>
+	</section>
+	<section class="main-section" id="Why_PHP?">
+	<header><h2>Why PHP?</h2></header>	
+	<ul>
+		<li>
+			PHP runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+		</li>
+		<li>
+			PHP is compatible with almost all servers used today (Apache, IIS, etc.)
+		</li>
+		<li>
+			PHP supports a wide range of databases
+		</li>
+		<li>
+			PHP is free. Download it from the official PHP resource: <a class="_blank" href="www.php.net">www.php.net</a>
+		</li>
+		<li>
+			PHP is easy to learn and runs efficiently on the server side
+		</li>
+	</ul>
+	</section>
+	<section class="main-section" id="What_Do_I_Need?">
+	<header><h2>What Do I Need?</h2></header> 
+	<p>
+		To start using PHP, you can:
+		<ul>
+			<li>
+				Find a web host with PHP and MySQL support
+			</li>
+			<li>
+				Install a web server on your own PC, and then install PHP and MySQL
+			</li>
+		</ul>
+	</p>	
+	</section>
+	<section class="main-section" id="Use_a_Web_Host_With_PHP_Support">
+	<header><h2>Use a Web Host With PHP Support</h2></header>	
+	<p>
+		If your server has activated support for PHP you do not need to do anything. <br><br>
+		Just create some .php files, place them in your web directory, and the 	server will automatically parse them for you. <br><br>
+		You do not need to compile anything or install any extra tools. <br><br>
+		Because PHP is free, most web hosts offer PHP support. <br><br>
+	</p>
+	</section>
+	<section class="main-section" id="Set_Up_PHP_on_Your_Own_PC">
+	<header><h2>Set Up PHP on Your Own PC</h2></header>	
+	<p>
+		However, if your server does not support PHP, you must:
+		<ul>
+			<li>
+				install a web server
+			</li>
+			<li>
+				install PHP
+			</li>
+			<li>
+				install a database, such as MySQL
+			</li>
+		</ul>
+		The official PHP website (PHP.net) has installation instructions for PHP: <a class="_blank" href="http://php.net/manual/en/install.php">http://php.net/manual/en/install.php</a>
+	</p>
+	</section>
+	<p class="remark">A PHP script is executed on the server, and the plain HTML result is sent back to the browser.</p>
+	<section class="main-section" id="Basic_PHP_Syntax">
+	<header><h2>Basic PHP Syntax</h2></header>	
+	<p>
+		A PHP script can be placed anywhere in the document. <br><br>
+		A PHP script starts with <b>&lt?php</b> and ends with <b>?&gt</b>:
+		<div class="example-box">
+		<p>Example</p>
+		<div class="code-box">
+			<code>
+				<span class="blue-text">&lt</span><span class="brown-text">!DOCTYPE </span> <span class="red-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text"></span><span class="brown-text">body</span><span class="blue-text">&gt</span> <br><br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">h1</span><span class="blue-text">&gt</span>My first PHP page <span class="blue-text">&lt</span><span class="brown-text">/h1</span><span class="blue-text">&gt</span> <br><br>
+
+
+				<span class="red-text">&lt?php</span> <br>
+				<span class="blue-text">echo</span><span class="brown-text">"Hello World!"</span>; <br>
+				<span class="red-text">?&gt</span> <br><br>
+
+
+				<span class="blue-text">&lt</span><span class="brown-text">/body</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">/html</span><span class="blue-text">&gt</span>
+			</code>
+		</div>
+		<a target="_blank" href="https://www.w3schools.com/php/showphp.asp?filename=demo_syntax" class="button">Run example</a>
+	</div>	
+	<b>Note:</b> PHP statements end with a semicolon (;).
+	</p>
+	</section>
+	<section class="main-section" id="Comments_in_PHP">
+	<header><h2>Comments in PHP</h2></header>	
+	<p>
+		A comment in PHP code is a line that is not read/executed as part of the program. Its only purpose is to be read by someone who is looking at the code. <br><br>
+
+		Comments can be used to:
+		<ul>
+			<li>
+				Let others understand what you are doing
+			</li>
+			<li>
+				Remind yourself of what you did - Most programmers have experienced coming back to their own work a year or two later and having to re-figure out what they did. Comments can remind you of what you were thinking when you wrote the code
+			</li>
+		</ul>
+		PHP supports several ways of commenting:
+	</p>
+	</section>
+	<section class="main-section" id="PHP_Case_Sensitivity">
+	<header><h2>PHP Case Sensitivity</h2></header>
+	<div class="example-box">
+		<p>Example</p>
+		<div class="code-box">
+			<code>
+				<span class="blue-text">&lt</span><span class="brown-text">!DOCTYPE </span><span class="red-text"> html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text"></span>body<span class="blue-text">&gt</span> <br><br>
+				<span class="red-text">&lt?php</span> <br>
+				<span class="green-text">
+					// This is a single-line comment <br><br>
+
+					# This is also a single-line comment <br><br>
+
+					/* <br>
+					This is a multiple-lines comment block <br>
+					that spans over multiple <br>
+					lines <br>
+					*/ <br><br>
+
+					// You can also use comments to leave out parts of a code line <br>
+				</span>
+				$x = <span class="red-text">5 </span><span class="green-text">/* + 15 */ </span>+ <span class="red-text">5</span>; <br>
+				<span class="blue-text">echo </span> $x; <br>
+				<span class="red-text">?&gt</span> <br> <br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">/body</span><span class="blue-text">&gt</span><br>
+				<span class="blue-text">&lt</span><span class="brown-text">/html</span><span class="blue-text">&gt</span>
+			</code>
+		</div>
+		<a target="_blank" class="button" href="https://www.w3schools.com/php/showphp.asp?filename=demo_syntax_comments">Run example</a>
+	</div>
+	</section>
+	<section class="main-section" id="Extra_Examples">
+	<header><h2>Extra Examples</h2></header>
+	<div class="example-box">
+		<p>Example 1</p>
+		<div class="code-box">
+			<code>
+				<span class="blue-text">&lt</span><span class="brown-text">!DOCTYPE </span> <span class="red-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text"></span><span class="brown-text">body</span><span class="blue-text">&gt</span> <br><br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">h1</span><span class="blue-text">&gt</span>
+				My second PHP page 
+				<span class="blue-text">&lt</span><span class="brown-text">/h1</span><span class="blue-text">&gt</span> <br><br>
+
+
+				<span class="red-text">&lt?php</span> <br>
+				<span class="blue-text">echo</span><span class="brown-text">"Hello World!"</span>; <br>
+				<span class="red-text">?&gt</span> <br><br>
+
+
+				<span class="blue-text">&lt</span><span class="brown-text">/body</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">/html</span><span class="blue-text">&gt</span>
+			</code>
+		</div>
+
+		<p>Example 2</p>
+		<div class="code-box">
+			<code>
+				<span class="blue-text">&lt</span><span class="brown-text">!DOCTYPE </span> <span class="red-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text"></span><span class="brown-text">body</span><span class="blue-text">&gt</span> <br><br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">h1</span><span class="blue-text">&gt</span>
+				Physical Constants
+				<span class="blue-text">&lt</span><span class="brown-text">/h1</span><span class="blue-text">&gt</span> <br><br>
+
+				<span class="green-text">
+					// Number of fundamental constants <br><br>
+
+					/*
+					The number of fundamental physical constants depends on the physical theory accepted as "fundamental". Currently, this is the theory of general relativity for gravitation and the Standard Model for electromagnetic, weak and strong nuclear interactions and the matter fields. Between them, these theories account for a total of 19 independent fundamental constants. There is, however, no single "correct" way of enumerating them, as it is a matter of arbitrary choice which quantities are considered "fundamental" and which as "derived". Uzan (2011) lists 22 "unknown constants" in the fundamental theories, which give rise to 19 "unknown dimensionless parameters", as follows:
+					*/
+				</span> <br><br>
+
+				<span class="red-text">&lt?php</span> <br>
+				<span class="blue-text">echo</span><span class="brown-text">"I like to copy stuff from Wikipedia."</span>; <br>
+				<span class="red-text">?&gt</span> <br><br>
+
+
+				<span class="blue-text">&lt</span><span class="brown-text">/body</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">/html</span><span class="blue-text">&gt</span>
+			</code>
+		</div>
+
+		<p>Example 3</p>
+		<div class="code-box">
+			<code>
+				<span class="blue-text">&lt</span><span class="brown-text">!DOCTYPE </span> <span class="red-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">html</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text"></span><span class="brown-text">body</span><span class="blue-text">&gt</span> <br><br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">h2</span><span class="blue-text">&gt</span>
+				Fine-structure constant
+				<span class="blue-text">&lt</span><span class="brown-text">/h2</span><span class="blue-text">&gt</span> <br>
+
+				<span class="blue-text">&lt</span><span class="brown-text">h3</span><span class="blue-text">&gt</span>
+				Definition
+				<span class="blue-text">&lt</span><span class="brown-text">/h3</span><span class="blue-text">&gt</span> <br><br>
+				<span class="green-text">
+					// History <br><br>
+
+					/*
+					Based on the precise measurement of the hydrogen atom spectrum by Michelson and Morley,[20] Arnold Sommerfeld extended the Bohr model to include elliptical orbits and relativistic dependence of mass on velocity. He introduced a term for the fine-structure constant in 1916.[21] The first physical interpretation of the fine-structure constant α was as the ratio of the velocity of the electron in the first circular orbit of the relativistic Bohr atom to the speed of light in the vacuum.[22] Equivalently, it was the quotient between the minimum angular momentum allowed by relativity for a closed orbit, and the minimum angular momentum allowed for it by quantum mechanics. It appears naturally in Sommerfeld's analysis, and determines the size of the splitting or fine-structure of the hydrogenic spectral lines.
+
+					With the development of quantum electrodynamics (QED) the significance of α has broadened from a spectroscopic phenomenon to a general coupling constant for the electromagnetic field, determining the strength of the interaction between electrons and photons. The term 
+					α
+					/
+					2π
+					is engraved on the tombstone of one of the pioneers ofQED, Julian Schwinger, referring to his calculation ofthe anomalous magnetic dipole moment.
+					*/ <br><br>
+
+					# Physics is very interesting 
+				</span> <br><br>
+
+				<span class="red-text">&lt?php</span> <br>
+				<span class="blue-text">echo</span><span class="brown-text">"This text is not brown."</span>; <br>
+				<span class="red-text">?&gt</span> <br><br>
+
+
+				<span class="blue-text">&lt</span><span class="brown-text">/body</span><span class="blue-text">&gt</span> <br>
+				<span class="blue-text">&lt</span><span class="brown-text">/html</span><span class="blue-text">&gt</span>
+			</code>
+		</div>
+	</div>
+	</section>
+</main>
+</body>
+</html> 
